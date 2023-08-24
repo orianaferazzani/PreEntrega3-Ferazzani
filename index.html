@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registro de Notas</title>
+</head>
+<body>
+    <h1>Registro de Notas</h1>
+
+    <div id="profesorForm" class="contenedor">
+        <h2>Profesor</h2>
+        <label for="profesorNombre">Nombre:</label>
+        <input type="text" id="profesorNombre"><br>
+
+        <label for="profesorApellido">Apellido:</label>
+        <input type="text" id="profesorApellido"><br>
+
+        <label for="materia">Materia:</label>
+        <input type="text" id="materia"><br>
+
+        <button onclick="mostrarAlumnoForm()">Siguiente</button>
+        <button id="modoOscuroBtn">Modo Oscuro/claro</button>
+    </div>
+
+    <div id="alumnoForm"  class="contenedor" style="display: none;">
+        <h2>Alumnos</h2>
+        <label for="alumnoNombre">Nombre:</label>
+        <input type="text" id="alumnoNombre"><br>
+
+        <label for="alumnoApellido">Apellido:</label>
+        <input type="text" id="alumnoApellido"><br>
+
+        <label for="notas">Notas (separadas por coma):</label>
+        <input type="text" id="notas"><br>
+
+        <button onclick="agregarAlumno()">Agregar Alumno</button>
+        <button onclick="calcularPromedios()">Calcular Promedios</button>
+        <button id="modoOscuroBtn">Modo Oscuro/claro</button>
+       
+        <div id="resultados">
+            <p id="contadorAlumnos">Cantidad de Alumnos: 0</p>
+    
+        </div>
+    </div>
+
+    <button id="borrarDatosBtn">Borrar datos</button>
+
+   
+
+    <script src="main.js"></script>
+</body>
+</html>

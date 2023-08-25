@@ -15,10 +15,9 @@ function mostrarAlumnoForm() {
         localStorage.setItem("profesorNombre", profesorNombre);
         localStorage.setItem("profesorApellido", profesorApellido);
        
-        // let  profesorNombre = localStorage.getItem (profesorNombre)
-        // console.log(profesorNombre) 
-        // LAAU NO ME ANDA EL RECUPERAR LA INFORMACION
-
+        let  proNombre = localStorage.getItem ("profesorNombre")
+        console.log(proNombre) 
+        
         const profesorForm = document.getElementById("profesorForm");
         const alumnoForm = document.getElementById("alumnoForm");
         profesorForm.style.display = "none";
@@ -38,7 +37,6 @@ function agregarAlumno() {
         alumnos.push({ nombre, apellido, notas });
 
         // contador de alumnos
-        // LAUUUUUUUU no tengo ningun id llamado contador alumnos quw hago no se donde ponerlo en el html
         const contadorAlumnos = document.getElementById("contadorAlumnos");
         contadorAlumnos.textContent = `Cantidad de Alumnos: ${alumnos.length}`;
 
@@ -80,7 +78,8 @@ const body = document.body;
 modoOscuroBtn.addEventListener("click", () => {
     // Alternar clase "dark-mode" en el body
     body.classList.toggle("dark-mode");
-    
+    modoOscuroBtn.innerText =  body.classList.contains("dark-mode") ? "modo claro" : "modo oscuro";
+
     // Guardar el estado actual del modo en localStorage para que el usuario vea el mismo tema la próxima vez que visite el sitio.
     const modoActual = body.classList.contains("dark-mode") ? "oscuro" : "normal";
     localStorage.setItem("modo", modoActual);
@@ -92,6 +91,8 @@ window.onload = function () {
     if (modoGuardado === "oscuro") {
         body.classList.add("dark-mode");
     }
+    modoOscuroBtn.innerText =  body.classList.contains("dark-mode") ? "modo claro" : "modo oscuro";
+
 };
 
 // Boton borrar datos
